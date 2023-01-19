@@ -353,7 +353,34 @@ void Screen::sleepy_face(){
 void Screen::clear_face(){
   RGBmatrixPanel::fillRect(0,2,31,15,RGBmatrixPanel::Color444(BLACK));
 }
-    
+
+void Screen:: sad_face() {
+// ROSTO LITTLE STINKER(ROVER)
+
+// olhos esquerdo 
+RGBmatrixPanel::drawPixel(5,7,RGBmatrixPanel::Color444(102,51,0));
+RGBmatrixPanel::drawPixel(5,8,RGBmatrixPanel::Color444(102,51,0));
+RGBmatrixPanel::drawPixel(6,7,RGBmatrixPanel::Color444(102,51,0));
+RGBmatrixPanel::drawPixel(6,8,RGBmatrixPanel::Color444(102,51,0));
+
+// olho direito
+RGBmatrixPanel::drawPixel(12,7,RGBmatrixPanel::Color444(102,51,0));
+RGBmatrixPanel::drawPixel(12,8,RGBmatrixPanel::Color444(102,51,0));
+RGBmatrixPanel::drawPixel(13,7,RGBmatrixPanel::Color444(102,51,0));
+RGBmatrixPanel::drawPixel(13,8,RGBmatrixPanel::Color444(102,51,0));
+
+// boca do little stinker 
+RGBmatrixPanel::drawPixel(4,15,RGBmatrixPanel::Color444(BLUE));
+RGBmatrixPanel::drawPixel(14,15,RGBmatrixPanel::Color444(BLUE));
+RGBmatrixPanel::drawLine(5,14,14,14,RGBmatrixPanel::Color444(BLUE));
+
+// lagrima do olho esquedo 
+RGBmatrixPanel::drawPixel(5,10,RGBmatrixPanel::Color444(BLUE));
+RGBmatrixPanel::drawPixel(5,11,RGBmatrixPanel::Color444(BLUE));
+RGBmatrixPanel::drawPixel(6,11,RGBmatrixPanel::Color444(BLUE));
+
+} 
+
 void Screen::update_screen(int message[]){
   if ((preamble_check(message) && chksum_check(message)) || TEST_MODE){
     connected_status(message[CONNECTED_POS]);
